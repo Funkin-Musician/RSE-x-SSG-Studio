@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R.O.G Studio - World Fragment</title>
+    <style>
+        :root {
+            --bg-beige: #F9F6F0;
+            --card-white: #FFFFFF;
+            --primary-blue: #1A4B8E;
+            --accent-red: #D9383A;
+            --highlight-yellow: #FFC83B;
+            --text-dark: #1E232A;
+            --text-muted: #5C6470;
+            --border-light: #E2DFD8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-beige);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: var(--card-white);
+            border-bottom: 3px solid var(--primary-blue);
+            padding: 1rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* Nav Logo Circle */
+        .nav-logo-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--accent-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+            flex-shrink: 0;
+        }
+
+        .nav-logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--primary-blue);
+        }
+
+        .logo-text span {
+            color: var(--accent-red);
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: block;
+            margin-top: -2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 700;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-red);
+        }
+
+        /* Hero Showcase Header */
+        .hero-banner {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0F2B52 60%, var(--accent-red) 100%);
+            padding: 5rem 8%;
+            text-align: center;
+            color: #FFFFFF;
+            border-bottom: 4px solid var(--highlight-yellow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Main Hero Centered Logo */
+        .hero-logo-circle {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 6px solid var(--highlight-yellow);
+            background-color: #000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-logo-circle:hover {
+            transform: scale(1.03);
+        }
+
+        .hero-logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-banner h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .hero-banner p {
+            font-size: 1.25rem;
+            color: var(--highlight-yellow);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 8%;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+            border-left: 5px solid var(--accent-red);
+            padding-left: 0.8rem;
+        }
+
+        /* World Fragment Showcase Tile */
+        .featured-game {
+            background-color: var(--card-white);
+            border: 2px solid var(--border-light);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(26, 75, 142, 0.08);
+            margin-bottom: 4rem;
+        }
+
+        .game-banner {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #1E232A 0%, var(--primary-blue) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 2rem;
+            border-bottom: 3px solid var(--accent-red);
+        }
+
+        .game-banner h3 {
+            font-size: 2.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            margin-bottom: 0.5rem;
+        }
+
+        .game-banner p {
+            font-size: 0.95rem;
+            letter-spacing: 1.5px;
+            color: var(--highlight-yellow);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .game-details {
+            padding: 2.5rem;
+        }
+
+        .game-tag {
+            display: inline-block;
+            background-color: var(--highlight-yellow);
+            color: var(--text-dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .game-details h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .game-details p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.8rem;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: var(--card-white);
+            padding: 0.9rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(217, 56, 58, 0.25);
+        }
+
+        .btn:hover {
+            background-color: #B82A2C;
+            transform: translateY(-2px);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-box {
+            background-color: var(--card-white);
+            padding: 1.8rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            border-top: 4px solid var(--primary-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-3px);
+            border-top-color: var(--accent-red);
+        }
+
+        .feature-box h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+        }
+
+        .feature-box p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Creators Section */
+        .creators-section {
+            background-color: var(--card-white);
+            border: 2px solid var(--border-light);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .creators-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .creator-card {
+            background-color: var(--bg-beige);
+            border: 2px solid var(--primary-blue);
+            padding: 1rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            letter-spacing: 0.5px;
+            min-width: 140px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            position: relative;
+        }
+
+        .creator-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--highlight-yellow);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            text-align: center;
+            padding: 2rem;
+            color: var(--card-white);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        footer span {
+            color: var(--highlight-yellow);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand-container">
+            <div class="nav-logo-circle">
+                <!-- Pointing directly to your screenshot file in the folder -->
+                <img src="Screenshot 2026-09-04 205908.png" alt="R.O.G Studio Logo">
+            </div>
+            <div class="logo-text">
+                R.O.G STUDIO
+                <span>SINCE 2026</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#project">Project</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#creators">Creators</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Banner with Large Screenshot Logo -->
+    <header class="hero-banner">
+        <div class="hero-logo-circle">
+            <img src="Screenshot 2026-09-04 205908.png" alt="R.O.G Studio Main Logo">
+        </div>
+        <h1>R.O.G STUDIO</h1>
+        <p>Crafting Next-Gen Roblox Experiences</p>
+        <a href="#project" class="btn">Explore Our Project</a>
+    </header>
+
+    <main class="container">
+        
+        <h2 id="project" class="section-title">Our Flagship Project</h2>
+        
+        <div class="featured-game">
+            <div class="game-banner">
+                <h3>WORLD FRAGMENT</h3>
+                <p>FPS Weaponry &bull; Devil Powers &bull; Open World RPG</p>
+            </div>
+            
+            <div class="game-details">
+                <span class="game-tag">In Active Development</span>
+                <h2>World Fragment</h2>
+                <p>An open-world Roblox RPG inspired by devil fruit progression systems, fused with high-octane Rivals-style gunplay. Ditch traditional swords for tactical armaments, animated abilities, and high-stakes open-world exploration.</p>
+                <a href="#" class="btn">Join Roblox Group</a>
+            </div>
+        </div>
+
+        <h2 id="features" class="section-title">Core Gameplay Systems</h2>
+        <div class="features-grid">
+            <div class="feature-box">
+                <h4>Rivals-Style Arsenal</h4>
+                <p>Master fast-paced ranged weaponry, shotguns, sniper rifles, and tactical gear instead of standard swords.</p>
+            </div>
+            <div class="feature-box">
+                <h4>Fruit & Relic Powers</h4>
+                <p>Unlock elemental abilities and combine magical fruit powers seamlessly with custom firearms.</p>
+            </div>
+            <div class="feature-box">
+                <h4>Animated Combat</h4>
+                <p>Custom-rigged reloading, ability casting, and smooth movement mechanics designed for fast gameplay.</p>
+            </div>
+            <div class="feature-box">
+                <h4>World Exploration</h4>
+                <p>Level up across fragmented islands, conquer world bosses, and build out your custom loadouts.</p>
+            </div>
+        </div>
+
+        <!-- Creators Section -->
+        <h2 id="creators" class="section-title">Studio Creators</h2>
+        <div class="creators-section">
+            <p style="color: var(--text-muted);">Meet the team behind R.O.G Studio and World Fragment</p>
+            <div class="creators-grid">
+                <div class="creator-card">1. Ranuja</div>
+                <div class="creator-card">2. Osad</div>
+                <div class="creator-card">3. Gevyy</div>
+                <div class="creator-card">4. Milith</div>
+                <div class="creator-card">5. Angel</div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 <span>R.O.G Studio</span>. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
