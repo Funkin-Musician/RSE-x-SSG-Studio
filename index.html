@@ -107,7 +107,7 @@
 
         /* Main Container */
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 3rem 8%;
         }
@@ -283,6 +283,19 @@
             border-bottom: 2px solid var(--primary-blue);
         }
 
+        .creator-placeholder {
+            width: 100%;
+            height: 170px;
+            background-color: #E2DFD8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            font-weight: 800;
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
         .creator-info {
             padding: 0.8rem 0.5rem;
             width: 100%;
@@ -297,8 +310,8 @@
 
         .creator-role {
             font-size: 0.75rem;
-            color: var(--text-muted);
-            font-weight: 600;
+            color: var(--accent-red);
+            font-weight: 700;
             text-transform: uppercase;
             margin-top: 0.2rem;
         }
@@ -317,7 +330,7 @@
         footer {
             background-color: var(--primary-blue);
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             color: var(--card-white);
             font-size: 0.9rem;
             font-weight: 500;
@@ -328,9 +341,13 @@
         }
 
         .footer-credits {
-            margin-top: 0.8rem;
+            margin-top: 1rem;
             font-size: 0.85rem;
             color: #D1E0F8;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
@@ -394,43 +411,50 @@
         </div>
 
         <!-- Creators Section -->
-        <h2 id="creators" class="section-title">Studio Creators & Owners</h2>
+        <h2 id="creators" class="section-title">Studio Team & Roles</h2>
         <div class="creators-section">
-            <p style="color: var(--text-muted);">The core team behind the website and RSE x SSG Game Studio</p>
+            <p style="color: var(--text-muted);">Meet the core developers and creators behind World Fragment</p>
             <div class="creators-grid">
                 <div class="creator-card">
-                    <img src="geviru.jpeg" alt="Geviru">
+                    <img src="geviru.jpg" alt="Geviru">
                     <div class="creator-info">
                         <div class="creator-name">Geviru</div>
-                        <div class="creator-role">Creator & Owner</div>
+                        <div class="creator-role">Executive Coder</div>
                     </div>
                 </div>
                 <div class="creator-card">
-                    <img src="osad.jpeg" alt="Osad">
-                    <div class="creator-info">
-                        <div class="creator-name">Osad</div>
-                        <div class="creator-role">Creator & Owner</div>
-                    </div>
-                </div>
-                <div class="creator-card">
-                    <img src="angel.jpeg" alt="Angel">
-                    <div class="creator-info">
-                        <div class="creator-name">Angel</div>
-                        <div class="creator-role">Creator & Owner</div>
-                    </div>
-                </div>
-                <div class="creator-card">
-                    <img src="ranuja.png" alt="Ranuja">
+                    <img src="ranuja.jpg" alt="Ranuja">
                     <div class="creator-info">
                         <div class="creator-name">Ranuja</div>
-                        <div class="creator-role">Creator & Owner</div>
+                        <div class="creator-role">Manager & Scripter</div>
                     </div>
                 </div>
                 <div class="creator-card">
-                    <img src="milith.png" alt="Milith">
+                    <img src="osad.jpg" alt="Osad">
+                    <div class="creator-info">
+                        <div class="creator-name">Osad</div>
+                        <div class="creator-role">Music & Map Design</div>
+                    </div>
+                </div>
+                <div class="creator-card">
+                    <img src="angel.jpg" alt="Angel">
+                    <div class="creator-info">
+                        <div class="creator-name">Angel</div>
+                        <div class="creator-role">Map Design & Helper</div>
+                    </div>
+                </div>
+                <div class="creator-card">
+                    <img src="milith.jpg" alt="Milith">
                     <div class="creator-info">
                         <div class="creator-name">Milith</div>
-                        <div class="creator-role">Creator & Owner</div>
+                        <div class="creator-role">Graphic Designer</div>
+                    </div>
+                </div>
+                <div class="creator-card">
+                    <div class="creator-placeholder">J</div>
+                    <div class="creator-info">
+                        <div class="creator-name">Jayden</div>
+                        <div class="creator-role">Animator</div>
                     </div>
                 </div>
             </div>
@@ -440,7 +464,11 @@
 
     <footer>
         <p>&copy; 2026 <span>RSE x SSG Studio</span>. All rights reserved.</p>
-        <p class="footer-credits">Website & Game Studio Created & Owned by Geviru, Osad, Angel, Ranuja, and Milith.</p>
+        <p class="footer-credits">
+            <strong>Credits & Studio Ownership:</strong><br>
+            Geviru (Executive Coder) &bull; Ranuja (Manager & Scripter) &bull; Osad (Music & Map Design)<br>
+            Angel (Map Design & Helper) &bull; Milith (Graphic Designer) &bull; Jayden (Animator)
+        </p>
     </footer>
 
 </body>
