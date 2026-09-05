@@ -254,21 +254,53 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .creator-card {
             background-color: var(--bg-beige);
             border: 2px solid var(--primary-blue);
-            padding: 1rem 1.8rem;
-            border-radius: 8px;
+            border-radius: 12px;
+            overflow: hidden;
+            width: 170px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .creator-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .creator-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        .creator-info {
+            padding: 0.8rem 0.5rem;
+            width: 100%;
+        }
+
+        .creator-name {
             font-weight: 800;
             color: var(--primary-blue);
             letter-spacing: 0.5px;
-            min-width: 140px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .creator-role {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 0.2rem;
         }
 
         .creator-card::after {
@@ -293,6 +325,12 @@
 
         footer span {
             color: var(--highlight-yellow);
+        }
+
+        .footer-credits {
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            color: #D1E0F8;
         }
     </style>
 </head>
@@ -356,15 +394,45 @@
         </div>
 
         <!-- Creators Section -->
-        <h2 id="creators" class="section-title">Studio Creators</h2>
+        <h2 id="creators" class="section-title">Studio Creators & Owners</h2>
         <div class="creators-section">
-            <p style="color: var(--text-muted);">Meet the team behind RSE x SSG Studio and World Fragment</p>
+            <p style="color: var(--text-muted);">The core team behind the website and RSE x SSG Game Studio</p>
             <div class="creators-grid">
-                <div class="creator-card">1. Ranuja</div>
-                <div class="creator-card">2. Osad</div>
-                <div class="creator-card">3. Gevyy</div>
-                <div class="creator-card">4. Milith</div>
-                <div class="creator-card">5. Angel</div>
+                <div class="creator-card">
+                    <img src="geviru.jpeg" alt="Geviru">
+                    <div class="creator-info">
+                        <div class="creator-name">Geviru</div>
+                        <div class="creator-role">Creator & Owner</div>
+                    </div>
+                </div>
+                <div class="creator-card">
+                    <img src="osad.jpeg" alt="Osad">
+                    <div class="creator-info">
+                        <div class="creator-name">Osad</div>
+                        <div class="creator-role">Creator & Owner</div>
+                    </div>
+                </div>
+                <div class="creator-card">
+                    <img src="angel.jpeg" alt="Angel">
+                    <div class="creator-info">
+                        <div class="creator-name">Angel</div>
+                        <div class="creator-role">Creator & Owner</div>
+                    </div>
+                </div>
+                <div class="creator-card">
+                    <img src="ranuja.png" alt="Ranuja">
+                    <div class="creator-info">
+                        <div class="creator-name">Ranuja</div>
+                        <div class="creator-role">Creator & Owner</div>
+                    </div>
+                </div>
+                <div class="creator-card">
+                    <img src="milith.png" alt="Milith">
+                    <div class="creator-info">
+                        <div class="creator-name">Milith</div>
+                        <div class="creator-role">Creator & Owner</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -372,6 +440,7 @@
 
     <footer>
         <p>&copy; 2026 <span>RSE x SSG Studio</span>. All rights reserved.</p>
+        <p class="footer-credits">Website & Game Studio Created & Owned by Geviru, Osad, Angel, Ranuja, and Milith.</p>
     </footer>
 
 </body>
